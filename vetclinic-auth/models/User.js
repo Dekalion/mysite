@@ -1,26 +1,10 @@
-const express = require('express');
-const cors = require('cors');
-require('dotenv').config();
+const mongoose = require('mongoose');
 
-const connectDB = require('./db'); // Добавьте эту строку
-const authRoutes = require('./routes/auth');
-
-const app = express();
-
-// Подключение к базе данных
-connectDB(); // Добавьте эту строку
-
-// Middleware
-app.use(cors());
-app.use(express.json());
-
-// Роуты
-app.use('/api/auth', authRoutes);
-
-// Тестовый роут
-app.get('/', (req, res) => {
-  res.send('Сервер работает!');
+const userSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  phone: { type: String },
+  password: { type: String, required: true }
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Сервер запущен на порту ${PORT}`));
+module.exports = mongoose.model('User', userSchema);
