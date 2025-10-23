@@ -1,47 +1,26 @@
-const { connect } = require('./db');
+const express = require('express');
+const cors = require('cors');
+require('dotenv').config();
 
-class User {
-  // Инициализация таблицы
-  static async init() {
-    const db = await connect();
-    await db.exec(`
-      CREATE TABLE IF NOT EXISTS users (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name TEXT NOT NULL,
-        email TEXT NOT NULL UNIQUE,
-        phone TEXT,
-        password TEXT NOT NULL
-      )
-    `);
-  }
+const connectDB = require('./db'); // Добавьте эту строку
+const authRoutes = require('./routes/auth');
 
-  // Регистрация пользователя
-  static async create({ name, email, phone, password }) {
-    const db = await connect();
-    const { lastID } = await db.run(
-      'INSERT INTO users (name, email, phone, password) VALUES (?, ?, ?, ?)',
-      [name, email, phone, password]
-    );
-    return lastID;
-  }
+const app = express();
 
-  // Поиск пользователя по email
-  static async findByEmail(email) {
-    const db = await connect();
-    return db.get('SELECT * FROM users WHERE email = ?', [email]);
-  }
-}
+// Подключение к базе данных
+connectDB(); // Добавьте эту строку
 
-// Автоматически создаём таблицу при загрузке модели
-User.init();
+// Middleware
+app.use(cors());
+app.use(express.json());
 
-module.exports = User;const mongoose = require('mongoose');
+// Роуты
+app.use('/api/auth', authRoutes);
 
-const userSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    email: { type: String, required: true, unique: true },
-    phone: { type: String },
-    password: { type: String, required: true }
+// Тестовый роут
+app.get('/', (req, res) => {
+  res.send('Сервер работает!');
 });
 
-module.exports = mongoose.model('User', userSchema);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Сервер запущен на порту ${PORT}`));
