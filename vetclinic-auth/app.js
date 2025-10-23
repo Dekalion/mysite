@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 
-const authRoutes = require('./routes/auth');
+// const authRoutes = require('./routes/auth'); // временно закомментируйте
 
 const app = express();
 
@@ -10,20 +10,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Инициализация базы данных при запуске
-require('./models/User'); // Это вызовет User.init()
-
-// Роуты
-app.use('/api/auth', authRoutes);
+// Временно закомментируем роуты аутентификации
+// app.use('/api/auth', authRoutes);
 
 // Тестовый роут
 app.get('/', (req, res) => {
-  res.send('Сервер работает с SQLite!');
-});
-
-// Health check для Render
-app.get('/health', (req, res) => {
-  res.json({ status: 'OK', database: 'SQLite' });
+  res.send('Сервер работает! База данных временно отключена.');
 });
 
 const PORT = process.env.PORT || 3000;
