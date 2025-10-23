@@ -1,12 +1,16 @@
-const sqlite3 = require('sqlite3').verbose();
-const { open } = require('sqlite');
-const path = require('path');
+const mongoose = require('mongoose');
 
-async function connect() {
-  return open({
-    filename: path.join(__dirname, 'database', 'vetclinic.db'),
-    driver: sqlite3.Database
-  });
-}
+const connectDB = async () => {
+  try {
+    const conn = await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/vetclinic', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log(`MongoDB Connected: ${conn.connection.host}`);
+  } catch (error) {
+    console.error('Database connection error:', error);
+    process.exit(1);
+  }
+};
 
-module.exports = { connect };
+module.exports = connectDB;
