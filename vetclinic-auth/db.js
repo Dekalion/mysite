@@ -1,16 +1,26 @@
-const mongoose = require('mongoose');
+const sqlite3 = require('sqlite3').verbose();
+const { open } = require('sqlite');
+const path = require('path');
+const fs = require('fs');
 
-const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/vetclinic', {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
-  } catch (error) {
-    console.error('Database connection error:', error);
-    process.exit(1);
+async function connect() {
+  // На Render используем /tmp директорию для сохранения файлов
+  const dbDir = process.env.NODE_ENV === 'production' 
+    ? '/tmp' 
+    : path.join(__dirname, 'database');
+  
+  // Создаем директорию если не существует
+  if (!fs.existsSync(dbDir)) {
+    fs.mkdirSync(dbDir, { recursive: true });
   }
-};
+  
+  const dbPath = path.join(dbDir, 'vetclinic.db');
+  console.log(`Database path: ${dbPath}`);
+  
+  return open({
+    filename: dbPath,
+    driver: sqlite3.Database
+  });
+}
 
-module.exports = connectDB;
+module.exports = { connect };
