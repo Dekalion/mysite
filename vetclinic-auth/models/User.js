@@ -1,6 +1,7 @@
-const { connect } = require('./db');
+const { connect } = require('./db');  // Используем локальный db.js в той же папке
 
 class User {
+  // остальной код без изменений...
   // Инициализация таблицы
   static async init() {
     try {
@@ -47,3 +48,4 @@ class User {
 User.init();
 
 module.exports = User;
+
