@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 
-const connectDB = require('./db'); // Измените эту строку
+const connectDB = require('./db'); // Добавьте эту строку
 const authRoutes = require('./routes/auth');
 
 const app = express();
