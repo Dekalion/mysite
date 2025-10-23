@@ -1,6 +1,10 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
+
+// Подключение к базе данных
+require('./db');
 
 const authRoutes = require('./routes/auth');
 
@@ -10,12 +14,32 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Роуты
+// Раздача статических файлов из папки public
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Роуты API
 app.use('/api/auth', authRoutes);
 
-// Тестовый роут
+// Роут для главной страницы
 app.get('/', (req, res) => {
-  res.send('Сервер работает!');
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// Роуты для других HTML страниц
+app.get('/contacts', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'contacts.html'));
+});
+
+app.get('/doctors', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'doctors.html'));
+});
+
+app.get('/prices', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'prices.html'));
+});
+
+app.get('/services', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'services.html'));
 });
 
 const PORT = process.env.PORT || 3000;
