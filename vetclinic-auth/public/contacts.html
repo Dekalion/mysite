@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Университет "Академия Знаний"</title>
+    <meta name="description" content="Контактная информация университета 'Академия Знаний': адрес, телефон, email, карта проезда.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="https://sun1-25.userapi.com/s/v1/ig2/u-1yxzBQgMUGOGwN2fygXT6VWm8ixbRe0O4vi8wte8dIdHbbVAstMLsXlXLMcuc9JwqsF_y3yEoRPcaCQKWZXF9D.jpg?size=682x682&quality=95&crop=85,85,682,682&ava=1" alt="Логотип Университета"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="services.html">Факультеты</a></li>
+                    <li><a href="doctors.html">Преподаватели</a></li>
+                    <li><a href="prices.html">Стоимость</a></li>
+                    <li class="active"><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="phone-number">
+                <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="page-header">
+            <div class="container">
+                <h2>Контакты</h2>
+                <p>Свяжитесь с нами для получения информации о поступлении или задайте интересующие вопросы.</p>
+            </div>
+        </section>
+
+        <section id="contact-info">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <h3>Адрес</h3>
+                        <p>г. Москва, ул. Университетская, д. 1</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Телефон</h3>
+                        <p><a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Email</h3>
+                        <p><a href="mailto:info@academy.ru">info@academy.ru</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Часы работы</h3>
+                        <p>Пн-Пт: 9:00 - 18:00</p>
+                        <p>Сб: 10:00 - 15:00</p>
+                        <p>Вс: Выходной</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="map">
+            <div class="container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2241.672824359267!2d37.617635!3d55.755826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a53851b631f%3A0x8c98ef45386071c!2z0JzQvtGB0LrQstCw!5e0!3m2!1sru!2sru!4v1698236789345!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+        <section id="appointment">
+            <div class="container">
+                <h2>Записаться на консультацию</h2>
+                <p>Оставьте заявку и мы свяжемся с вами для консультации по вопросам поступления.</p>
+                <a href="#contact-form-section" class="button">Оставить заявку</a>
+            </div>
+        </section>
+
+         <section id="contact-form-section">
+            <div class="container">
+                <h2>Связаться с нами</h2>
+                <form action="#" method="post">
+                    <label for="name">Ваше имя:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="phone">Ваш телефон:</label>
+                    <input type="tel" id="phone" name="phone" required>
+
+                    <label for="email">Ваш email:</label>
+                    <input type="email" id="email" name="email">
+
+                    <label for="message">Ваш вопрос:</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Интересующий факультет, специальность..."></textarea>
+
+                    <button type="submit" class="button">Отправить сообщение</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-info">
+                <p>&copy; 2023 Университет "Академия Знаний"</p>
+                <p>Адрес: г. Москва, ул. Университетская, д. 1</p>
+                <p>Телефон: +7 (999) 123-45-67</p>
+                <p>Email: info@academy.ru</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

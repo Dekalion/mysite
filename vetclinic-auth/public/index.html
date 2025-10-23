@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Университет "Академия Знаний"</title>
+    <meta name="description" content="Современный университет с качественным образованием и индивидуальным подходом к каждому студенту.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="https://sun1-25.userapi.com/s/v1/ig2/u-1yxzBQgMUGOGwN2fygXT6VWm8ixbRe0O4vi8wte8dIdHbbVAstMLsXlXLMcuc9JwqsF_y3yEoRPcaCQKWZXF9D.jpg?size=682x682&quality=95&crop=85,85,682,682&ava=1" alt="Логотип Университета"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="services.html" class="nav-link locked">Факультеты</a></li>
+                    <li><a href="doctors.html" class="nav-link locked">Преподаватели</a></li>
+                    <li><a href="prices.html" class="nav-link locked">Стоимость</a></li>
+                    <li><a href="contacts.html" class="nav-link locked">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button id="login-btn" class="auth-btn">Вход</button>
+                <button id="register-btn" class="auth-btn">Регистрация</button>
+                <div id="user-profile" style="display: none;">
+                    <span id="username-display"></span>
+                    <button id="logout-btn">Выйти</button>
+                </div>
+            </div>
+
+            <div class="phone-number">
+                <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Модальные окна -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Вход в систему</h2>
+            <form id="login-form">
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" required>
+                
+                <label for="login-password">Пароль:</label>
+                <input type="password" id="login-password" required>
+                
+                <button type="submit" class="button">Войти</button>
+                <p id="login-error" class="error-message"></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Регистрация</h2>
+            <form id="register-form">
+                <label for="reg-name">Имя:</label>
+                <input type="text" id="reg-name" required>
+                
+                <label for="reg-email">Email:</label>
+                <input type="email" id="reg-email" required>
+                
+                <label for="reg-phone">Телефон:</label>
+                <input type="tel" id="reg-phone" required>
+                
+                <label for="reg-password">Пароль:</label>
+                <input type="password" id="reg-password" required>
+                
+                <label for="reg-confirm">Подтвердите пароль:</label>
+                <input type="password" id="reg-confirm" required>
+                
+                <button type="submit" class="button">Зарегистрироваться</button>
+                <p id="register-error" class="error-message"></p>
+            </form>
+        </div>
+    </div>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Качественное образование - основа вашего успешного будущего!</h1>
+                    <p>Мы предлагаем современные образовательные программы, индивидуальный подход и сильный преподавательский состав.</p>
+                    <a href="services.html" class="button">Подать заявку</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://almamater13.ru/800/600/https/geografiyadobra.ru/upload/iblock/edd/edda375299f9482f4536222a2833b527.jpeg" alt="Главный корпус университета">
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <h2>Направления обучения</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <img src="https://avatars.mds.yandex.net/i?id=20c4d59aebf147b40e47c5ee4da0bb5d_l-4476027-images-thumbs&n=13" alt="Технические науки">
+                        <h3>Технические науки</h3>
+                        <p>IT, инженерия, компьютерные технологии.</p>
+                    </div>
+                    <div class="service-item">
+                        <img src="https://avatars.mds.yandex.net/i?id=7efbb57cfcf0c9f8e11a1c9b1ca5cfefe272bcde-4314308-images-thumbs&n=13" alt="Гуманитарные науки">
+                        <h3>Гуманитарные науки</h3>
+                        <p>Лингвистика, философия, история.</p>
+                    </div>
+                    <div class="service-item">
+                        <img src="https://static.tildacdn.com/tild6637-6162-4236-b734-383839313461/bk-XbLNlT24VLRQrA1OT.jpg" alt="Экономика">
+                        <h3>Экономика</h3>
+                        <p>Финансы, менеджмент, маркетинг.</p>
+                    </div>
+                    <div class="service-item">
+                        <img src="https://webstockreview.net/images/clipart-coat-lawyer-7.png" alt="Юриспруденция">
+                        <h3>Юриспруденция</h3>
+                        <p>Гражданское, уголовное, международное право.</p>
+                    </div>
+                </div>
+                <a href="services.html" class="button">Все направления</a>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <div class="container">
+                <h2>Отзывы наших студентов</h2>
+                <div class="testimonial">
+                    <p>"Отличный университет! Преподаватели всегда готовы помочь, современное оборудование и интересные программы."</p>
+                    <p class="author">- Анна К., выпускница 2022</p>
+                </div>
+                <div class="testimonial">
+                    <p>"Поступил сюда по совету друзей и не пожалел. Получил качественные знания и нашел хорошую работу после окончания."</p>
+                    <p class="author">- Дмитрий С., студент 3 курса</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-info">
+                <p>&copy; 2023 Университет "Академия Знаний"</p>
+                <p>Адрес: г. Москва, ул. Университетская, д. 1</p>
+                <p>Телефон: +7 (999) 123-45-67</p>
+                <p>Email: info@academy.ru</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

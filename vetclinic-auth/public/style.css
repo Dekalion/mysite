@@ -1,0 +1,853 @@
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #2c3e50;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #1a252f;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #2c3e50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #1a252f;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    padding: 15px 0;
+    border-bottom: 2px solid #bdc3c7;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    max-height: 60px;
+    transition: transform 0.3s ease;
+}
+
+header .logo img:hover {
+    transform: scale(1.05);
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 25px;
+}
+
+header nav ul li:first-child {
+    margin-left: 0;
+}
+
+header nav ul li a {
+    display: block;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+header nav ul li a:hover {
+    background-color: #ecf0f1;
+    text-decoration: none;
+}
+
+header .phone-number a {
+    font-weight: bold;
+    color: #2c3e50;
+    transition: color 0.3s ease;
+}
+
+header .phone-number a:hover {
+    color: #3498db;
+    text-decoration: none;
+}
+
+/* Hero Section */
+#hero {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+#hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+
+#hero .hero-content {
+    flex: 1;
+    padding-right: 40px;
+}
+
+#hero .hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: white;
+}
+
+#hero .hero-content p {
+    font-size: 1.2rem;
+    color: #ecf0f1;
+    margin-bottom: 30px;
+}
+
+#hero .hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+#hero .hero-image img {
+    max-width: 450px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Services Section */
+#services {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+#services .container {
+    text-align: center;
+}
+
+#services h2 {
+    margin-bottom: 50px;
+    color: #2c3e50;
+    position: relative;
+}
+
+#services h2:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #3498db;
+    margin: 15px auto;
+}
+
+#services .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+#services .service-item {
+    border: 1px solid #e0e0e0;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+#services .service-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+#services .service-item img {
+    max-height: 150px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.3s ease;
+}
+
+#services .service-item:hover img {
+    transform: scale(1.08);
+}
+
+#services .service-item h3 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+#services .service-item p {
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+/* Testimonials Section */
+#testimonials {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+#testimonials .container {
+    text-align: center;
+}
+
+#testimonials h2 {
+    margin-bottom: 50px;
+    color: #2c3e50;
+    position: relative;
+}
+
+#testimonials h2:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #3498db;
+    margin: 15px auto;
+}
+
+#testimonials .testimonial {
+    margin-bottom: 40px;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    transition: box-shadow 0.3s ease;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#testimonials .testimonial:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#testimonials .testimonial p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    font-style: italic;
+}
+
+#testimonials .testimonial .author {
+    font-style: normal;
+    text-align: right;
+    color: #7f8c8d;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Appointment Section */
+#appointment {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+    text-align: center;
+    color: white;
+}
+
+#appointment .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#appointment h2 {
+    margin-bottom: 30px;
+    color: white;
+}
+
+#appointment p {
+    font-size: 1.2rem;
+    color: #ecf0f1;
+    margin-bottom: 40px;
+}
+
+#appointment form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#appointment label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #ecf0f1;
+    text-align: left;
+}
+
+#appointment input,
+#appointment textarea {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: border-color 0.3s ease;
+}
+
+#appointment input:focus,
+#appointment textarea:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+#appointment textarea {
+    resize: vertical;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 40px 0 20px;
+    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+footer .footer-info {
+    flex: 1;
+    min-width: 300px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+footer .footer-info p {
+    margin: 8px 0;
+    font-size: 1rem;
+    color: #ecf0f1;
+}
+
+footer .social-links {
+    flex: 0 0 auto;
+    margin-bottom: 20px;
+}
+
+footer .social-links a {
+    display: inline-block;
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+footer .social-links a:first-child {
+    margin-left: 0;
+}
+
+footer .social-links a:hover {
+    transform: scale(1.2);
+}
+
+footer .social-links img {
+    width: 30px;
+    height: 30px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+footer .social-links img:hover {
+    opacity: 1;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    #hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #hero .hero-content {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+
+    #hero .hero-image img {
+        max-width: 90%;
+    }
+
+    header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul {
+        margin-top: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 8px 0;
+    }
+
+    footer .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .footer-info {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    #services .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    #appointment form {
+        padding: 20px;
+    }
+}
+
+/* Дополнительные стили для services.html */
+#services-list {
+    padding: 60px 0;
+}
+
+#services-list .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+#services-list .service-item {
+    border: 1px solid #e0e0e0;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+}
+
+#services-list .service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+#services-list .service-item img {
+    max-height: 150px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Дополнительные стили для doctors.html */
+#doctors-list {
+    padding: 60px 0;
+}
+
+#doctors-list .doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+#doctors-list .doctor-item {
+    border: 1px solid #e0e0e0;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#doctors-list .doctor-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+#doctors-list .doctor-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    transition: transform 0.3s ease;
+    border: 3px solid #3498db;
+}
+
+#doctors-list .doctor-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Дополнительные стили для prices.html */
+#prices-list {
+    padding: 60px 0;
+}
+
+#prices-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+#prices-list th,
+#prices-list td {
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    text-align: left;
+}
+
+#prices-list th {
+    background-color: #2c3e50;
+    color: white;
+    font-weight: bold;
+}
+
+#prices-list tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+#prices-list .price-disclaimer {
+    font-style: italic;
+    text-align: right;
+    color: #7f8c8d;
+    font-size: 0.9em;
+}
+
+/* Дополнительные стили для contacts.html */
+#contact-info {
+    padding: 60px 0;
+}
+
+#contact-info .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+#contact-info .contact-item {
+    padding: 25px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact-info .contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+#map {
+    padding: 60px 0;
+}
+
+#map iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+#contact-form-section {
+    padding: 60px 0;
+}
+
+#contact-form-section form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Стили для выделения активной страницы в меню */
+header nav ul li.active a {
+    font-weight: bold;
+    color: #3498db;
+    background-color: #ecf0f1;
+}
+
+/* Стили для системы авторизации */
+.auth-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-left: auto;
+    padding-left: 20px;
+}
+
+.auth-btn {
+    padding: 8px 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.auth-btn:hover {
+    background-color: #2980b9;
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+#user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #2c3e50;
+}
+
+#username-display {
+    font-weight: bold;
+    color: #3498db;
+}
+
+#logout-btn {
+    padding: 6px 12px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+#logout-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Модальные окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 25px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #333;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.9em;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Формы в модальных окнах */
+.modal h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal label {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: -10px;
+}
+
+.modal input {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.modal input:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.modal button[type="submit"] {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal button[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* Стили для неавторизованных ссылок */
+.nav-link.locked {
+    opacity: 0.6;
+    pointer-events: none;
+    position: relative;
+}
+
+.nav-link.locked::after {
+    content: "🔒";
+    position: absolute;
+    right: -15px;
+    font-size: 0.8em;
+}
+
+.nav-link.unlocked {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.nav-link.unlocked::after {
+    content: none;
+}
+
+/* Адаптивность для модальных окон */
+@media (max-width: 768px) {
+    .auth-buttons {
+        gap: 10px;
+        padding-left: 10px;
+    }
+    
+    .auth-btn, #logout-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .modal-content {
+        padding: 20px;
+        margin: 20% auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-buttons {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    #user-profile {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+    
+    .modal-content {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    header .phone-number {
+        margin-top: 10px;
+    }
+}
